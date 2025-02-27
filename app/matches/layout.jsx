@@ -30,17 +30,19 @@ const ContestHeader = () => {
 
 const layout = ({ children }) => {
   return (
-    <section className="flex h-[100dvh] flex-col">
+    <section className="flex min-h-[100dvh] flex-col">
       <div className="absolute left-0 top-0 flex justify-center w-full">
         <div className="max-w-[430px] top-0 left-0 w-full h-[100px]">
           <img src="/img/header/ellipse.png" className="w-full h-full" />
         </div>
       </div>
-      <div className="flex flex-col relative z-[1] grow w-full max-w-[430px] mx-auto overflow-hidden">
+      <div className="flex flex-col relative z-[1] grow w-full max-w-[430px] mx-auto ">
         <main className="w-full">
           <ContestHeader />
           <Nav />
-          {children}
+          <div className="h-[calc(100dvh-182px)] scrollbar-hide overflow-auto">
+            {children}
+          </div>
         </main>
       </div>
     </section>

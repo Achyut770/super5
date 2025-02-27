@@ -15,6 +15,8 @@ const UpcomingMatches = ({ state = "Upcoming" }) => {
   }, []);
 
   const isUpcoming = state === "Upcoming";
+  const isLive = state === "Live";
+  const isCompleted = state === "Completed";
   return (
     <div className="px-[10px]">
       <h2 className="flex my-2 text-[16px] font-semibold text-[#181818]">
@@ -96,12 +98,16 @@ const UpcomingMatches = ({ state = "Upcoming" }) => {
                       </div>
                       <span>SYDNEY</span>
                     </span>
-                    {isUpcoming && (
+                    {isUpcoming ? (
                       <p className="text-[14px] font-medium">
                         Starts in{" "}
                         <span className="text-primary font-semibold">
                           12h:35m:30s
                         </span>
+                      </p>
+                    ) : (
+                      <p className="text-[14px] font-medium">
+                        12-Feb-24 08:30pm
                       </p>
                     )}
                   </div>
@@ -128,13 +134,24 @@ const UpcomingMatches = ({ state = "Upcoming" }) => {
                         </span>
                       </div>
                     </div>
-                    {isUpcoming ? (
+                    {isUpcoming && (
                       <div className="flex flex-col">
                         <p className="text-[12px] text-right">Today</p>
                         <h2 className="text-[15px] font-semibold">5:30 PM</h2>
                       </div>
-                    ) : (
-                      <div className="text-primary">{state} </div>
+                    )}
+                    {isLive && (
+                      <div className="text-primary font-bold">{state} </div>
+                    )}
+                    {isCompleted && (
+                      <div className="flex flex-col items-center">
+                        <div className="text-green-400 font-bold">
+                          Completed
+                        </div>
+                        <div>
+                          Won <span className="text-primary">iPhone 15</span>
+                        </div>
+                      </div>
                     )}
                   </div>
                 </div>
