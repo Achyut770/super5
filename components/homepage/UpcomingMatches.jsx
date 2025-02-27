@@ -19,9 +19,9 @@ const UpcomingMatches = ({ state = "Upcoming" }) => {
   const isCompleted = state === "Completed";
   return (
     <div className="px-[10px]">
-      <h2 className="flex my-2 text-[16px] font-semibold text-[#181818]">
+      {/* <h2 className="flex my-2 text-[16px] font-semibold text-[#181818]">
         {state} Matches
-      </h2>
+      </h2> */}
       <div className="flex flex-col gap-[10px] w-full">
         {loading && (
           <>
