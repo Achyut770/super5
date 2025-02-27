@@ -31,7 +31,7 @@ const ContestHeader = () => {
 const layout = ({ children }) => {
   return (
     <section className="flex h-[100vh] flex-col">
-      <div className="absolute left-0 top-0 flex justify-center w-full">
+      <div className="fixed left-0 top-0 flex justify-center w-full">
         <div className="max-w-[430px] top-0 left-0 w-full h-[100px]">
           <img src="/img/header/ellipse.png" className="w-full h-full" />
         </div>
