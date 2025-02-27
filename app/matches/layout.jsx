@@ -36,10 +36,14 @@ const layout = ({ children }) => {
           <img src="/img/header/ellipse.png" className="w-full h-full" />
         </div>
       </div>
+
       <div className="flex flex-col relative z-[1] grow w-full max-w-[430px] mx-auto ">
-        <main className="w-full">
+        <div className="fixed top-0 ">
           <ContestHeader />
           <Nav />
+        </div>
+        <div className="h-[130px]"></div>
+        <main className="w-full">
           <div className="flex-grow overflow-auto max-h-[calc(100dvh-130px)] scrollbar-hide pt-4">
             {children}
           </div>

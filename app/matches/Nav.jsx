@@ -26,7 +26,7 @@ const Nav = () => {
   ];
 
   return (
-    <div className="max-w-[430px] sticky top-[20px] z-[2]  px-[10px] w-full mx-auto">
+    <div className="max-w-[430px] sticky top-[20px] z-[2]  px-[10px] w-[100vw] mx-auto">
       <div className="w-full flex flex-row justify-between gap-[4px] p-3 rounded-full bg-white shadow-sm">
         {tabList.map((d) => {
           const isActive = router === d.url;
