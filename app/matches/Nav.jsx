@@ -27,13 +27,13 @@ const Nav = () => {
 
   return (
     <div className="max-w-[430px] sticky top-[20px] z-[2]  px-[10px] w-full mx-auto">
-      <div className="w-full flex justify-between p-3 rounded-full bg-white shadow-sm">
+      <div className="w-full flex flex-row justify-between gap-[4px] p-3 rounded-full bg-white shadow-sm">
         {tabList.map((d) => {
           const isActive = router === d.url;
           return (
             <Link
               key={d.id}
-              className={`text-[14px] rounded-full w-[120px] text-center py-[7px] font-bold text-white ${
+              className={`text-[14px] rounded-full w-full max-w-[120px] text-center py-[7px] font-bold text-white ${
                 isActive ? "bg-primary" : "bg-[#FFBEA9]"
               }`}
               href={d.url}
