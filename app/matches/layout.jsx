@@ -40,7 +40,7 @@ const layout = ({ children }) => {
         <main className="w-full">
           <ContestHeader />
           <Nav />
-          <div className="h-[calc(100dvh-182px)] scrollbar-hide overflow-auto">
+          <div className="h-[calc(100dvh-70px)] scrollbar-hide overflow-auto">
             {children}
           </div>
         </main>
