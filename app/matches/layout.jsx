@@ -37,8 +37,8 @@ const layout = ({ children }) => {
         </div>
       </div>
 
-      <div className="flex flex-col relative z-[1] grow w-full max-w-[430px] mx-auto ">
-        <div className="fixed top-0 z-[2]">
+      <div className="flex flex-col relative  grow w-full max-w-[430px] mx-auto ">
+        <div className="fixed top-0 z-[3]">
           <ContestHeader />
           <Nav />
         </div>
