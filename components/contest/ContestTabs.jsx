@@ -10,14 +10,14 @@ const ContestTabs = ({ active, gameId }) => {
     { title: "My Picks", id: 2, url: `/${gameId}/my-picks` },
     { title: "Leaderboard", id: 3, url: `/${gameId}/leaderboard` },
     { title: "Rules", id: 4, url: `/${gameId}/rules` },
-    { title: "Stats", id: 5, url: `/${gameId}/stats` }, // Fixed duplicate id
+    { title: "Stats", id: 5, url: `/${gameId}/stats` },
   ];
 
   const [activeTab, setActiveTab] = useState(active);
 
   return (
     <div className="max-w-[430px] relative px-[10px] w-full mx-auto">
-      <div className="w-full flex p-3 gap-3 overflow-x-auto whitespace-nowrap scrollbar-hide rounded-full bg-white shadow-sm custom-scrollbar">
+      <div className="w-full flex p-3 gap-3 overflow-x-auto whitespace-nowrap rounded-full bg-white shadow-sm scrollbar-hidden md:scrollbar-custom">
         {tabList.map((d) => {
           const isActive = d.id === activeTab;
           return (

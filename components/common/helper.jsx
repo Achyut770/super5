@@ -72,6 +72,22 @@ export const matchs = [
     status: "Live",
   },
   {
+    id: 5,
+    team_Q1: "India",
+    title_Q1: "Ind",
+    logo_Q1: "/img/flags/RR.png",
+
+    time: {
+      date: "17th March",
+      time: "12:00 PM",
+    },
+
+    team_Q2: "Australia",
+    title_Q2: "Aus",
+    logo_Q2: "/img/flags/punjab.png",
+    status: "Upcoming",
+  },
+  {
     id: 2,
     team_Q1: "MI",
     title_Q1: "Mumbai Indians",

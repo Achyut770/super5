@@ -2,4 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Hide scrollbar on mobile */
+.scrollbar-hidden {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
 
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, and Opera */
+}
+
+/* Custom scrollbar for desktop */
+@media (min-width: 768px) {
+    .md\:scrollbar-custom {
+        -ms-overflow-style: auto;
+        /* IE and Edge */
+        scrollbar-width: thin;
+        /* Firefox - makes scrollbar thinner */
+    }
+
+    .md\:scrollbar-custom::-webkit-scrollbar {
+        display: block;
+        /* Chrome, Safari, and Opera */
+        height: 6px;
+        /* Adjust the height of the scrollbar */
+    }
+
+    .md\:scrollbar-custom::-webkit-scrollbar-thumb {
+        background-color: #ED5311;
+        /* Color of the scrollbar thumb */
+        border-radius: 3px;
+        /* Rounded corners for the thumb */
+    }
+
+    .md\:scrollbar-custom::-webkit-scrollbar-track {
+        background-color: #ED5311;
+        /* Color of the scrollbar track */
+        border-radius: 3px;
+        /* Rounded corners for the track */
+    }
+}
