@@ -27,6 +27,7 @@ const Page = ({ params }) => {
           <ContestHeader data={data} />
           <ContestTabs active={2} gameId={gameId} />
 
+          {/* Only render PredictionTable if statusGame is valid */}
           {data.id !== 5 ? (
             statusGame ? (
               <PredictionTable status={statusGame} />
