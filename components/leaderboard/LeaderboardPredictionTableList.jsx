@@ -9,7 +9,11 @@ const LeaderboardPredictionTableList = ({
   const isCompleted = status === "Completed";
   return (
     <div
-      onClick={() => setShowSelectedPrediction(true)}
+      onClick={() =>
+        !isUpComing
+          ? setShowSelectedPrediction(true)
+          : alert("Wait Until Match Starts")
+      }
       className="flex bg-[white] hover:bg-[#FFEAE2] transition-all duration-300 rounded-lg cursor-pointer items-center justify-between"
     >
       <div class="flex items-center w-full py-2 h-[60px]">

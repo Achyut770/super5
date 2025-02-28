@@ -20,7 +20,7 @@ const page = ({ params }) => {
       <div className="flex flex-col relative z-[1] grow w-full max-w-[430px] mx-auto overflow-hidden">
         <main className="w-full">
           <ContestHeader data={data} />
-          <ContestTabs active={3} gameId={gameId} />
+          <ContestTabs active={4} gameId={gameId} />
           Your Rules Here
         </main>
       </div>
