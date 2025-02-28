@@ -24,12 +24,12 @@ const LeaderboardPredictionTableList = ({
         </div>
         <div class="w-[80px] flex justify-center items-center gap-1">
           <span class="text-[#000] text-[15px]">
-            {isUpComing ? data.points : status}
+            {isUpComing ? data.points : null}
           </span>
         </div>
         <div class="w-[80px] flex justify-center items-center gap-1">
           <span class="text-[#000] text-[15px]">
-            {isUpComing ? data.rank : status}
+            {isUpComing ? data.rank : null}
           </span>
         </div>
       </div>

@@ -110,6 +110,7 @@ const LeaderboardPrediction = ({ status }) => {
       >
         <SelectedPrediction
           setShowSelectedPrediction={setShowSelectedPrediction}
+          status={status}
         />
       </div>
     </>

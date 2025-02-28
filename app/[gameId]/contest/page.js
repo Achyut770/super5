@@ -5,11 +5,9 @@ import WiningRank from "@/components/contest/WiningRank";
 import { findMatches } from "../../../components/common/helper";
 
 const Page = ({ params }) => {
-  const { gameId = 1 } = params; // Get dynamic param from URL
+  const { gameId = 1 } = params;
 
   const data = findMatches(gameId);
-  // fetch data and find if its status
-  console.log("Data", data);
 
   if (!gameId || !data) return;
 

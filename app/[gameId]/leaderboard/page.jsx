@@ -4,7 +4,7 @@ import LeaderboardPrediction from "@/components/leaderboard/LeaderboardPredictio
 import { findMatches, statusData } from "../../../components/common/helper";
 
 const page = ({ params }) => {
-  const { gameId = 1 } = params; // Get dynamic param from URL
+  const { gameId = 1 } = params;
 
   if (!gameId) return;
 
