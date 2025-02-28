@@ -2,17 +2,18 @@ import ContestHeader from "@/components/contest/ContestHeader";
 import ContestTabs from "@/components/contest/ContestTabs";
 import JoinSupercoin from "@/components/contest/JoinSupercoin";
 import WiningRank from "@/components/contest/WiningRank";
-import { statusData } from "../../../components/common/helper";
-
-
+import { findMatches } from "../../../components/common/helper";
 
 const Page = ({ params }) => {
-  const { gameId } = params; // Get dynamic param from URL
-  
-  
+  const { gameId = 1 } = params; // Get dynamic param from URL
 
+  const data = findMatches(gameId);
   // fetch data and find if its status
-  const isUpComing = statusData[gameId] ==="Upcoming"
+  console.log("Data", data);
+
+  if (!gameId || !data) return;
+
+  const isUpComing = data.status === "Upcoming";
 
   return (
     <div className="flex h-[100dvh] flex-col">
@@ -26,7 +27,7 @@ const Page = ({ params }) => {
         <main className="w-full">
           <ContestHeader />
           <ContestTabs active={1} gameId={gameId} />
-         {isUpComing && <JoinSupercoin />}
+          {isUpComing && <JoinSupercoin />}
           <WiningRank />
         </main>
       </div>

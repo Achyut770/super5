@@ -1,12 +1,16 @@
 import ContestHeader from "@/components/contest/ContestHeader";
 import ContestTabs from "@/components/contest/ContestTabs";
 import PredictionTable from "@/components/my-picks/PredictionTable";
-import { statusData } from "../../../components/common/helper";
+import { findMatches, statusData } from "../../../components/common/helper";
 
 const Page = ({ params }) => {
-  const { gameId } = params;
+  const { gameId = 1 } = params;
 
-  const statusGame = statusData[gameId] ? statusData[gameId] : null;
+  if (!gameId) return;
+
+  const data = findMatches(gameId);
+
+  const statusGame = data.status ? data.status : null;
 
   return (
     <div className="flex h-[100dvh] flex-col">

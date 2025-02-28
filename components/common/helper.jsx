@@ -13,6 +13,11 @@ import {
   TransactionIcon,
 } from "./Icons";
 
+export const findMatches = (id) => {
+  const data = matchs.find((items) => items.id == id);
+  return data;
+};
+
 export const statusData = {
   1: "Live",
   2: "Upcoming",
@@ -51,6 +56,7 @@ export const footerLinks = [
 
 export const matchs = [
   {
+    id: 1,
     team_Q1: "RR",
     title_Q1: "Rajasthan Royals",
     logo_Q1: "/img/flags/RR.png",
@@ -63,8 +69,10 @@ export const matchs = [
     team_Q2: "PBKS",
     title_Q2: "Punjab Kings",
     logo_Q2: "/img/flags/punjab.png",
+    status: "Live",
   },
   {
+    id: 2,
     team_Q1: "RR",
     title_Q1: "Rajasthan Royals",
     logo_Q1: "/img/flags/RR.png",
@@ -77,8 +85,10 @@ export const matchs = [
     team_Q2: "PBKS",
     title_Q2: "Punjab Kings",
     logo_Q2: "/img/flags/punjab.png",
+    status: "Completed",
   },
   {
+    id: 3,
     team_Q1: "RR",
     title_Q1: "Rajasthan Royals",
     logo_Q1: "/img/flags/RR.png",
@@ -91,8 +101,10 @@ export const matchs = [
     team_Q2: "PBKS",
     title_Q2: "Punjab Kings",
     logo_Q2: "/img/flags/punjab.png",
+    status: "Upcoming",
   },
   {
+    id: 4,
     team_Q1: "RR",
     title_Q1: "Rajasthan Royals",
     logo_Q1: "/img/flags/RR.png",
@@ -105,6 +117,7 @@ export const matchs = [
     team_Q2: "PBKS",
     title_Q2: "Punjab Kings",
     logo_Q2: "/img/flags/punjab.png",
+    status: "Completed",
   },
 ];
 export const teamOneData = [

@@ -3,8 +3,11 @@ import Header from "@/components/common/Header";
 import UpcomingMatches from "@/components/homepage/UpcomingMatches";
 import MyMatches from "@/components/homepage/MyMatches";
 import PromotionBanner from "@/components/common/PromotionBanner";
+import { matchs } from "../components/common/helper";
 
 export default function Home() {
+  const matches = matchs.filter((items) => items.status === "Upcoming");
+
   return (
     <>
       <div className="flex flex-col">
@@ -17,7 +20,7 @@ export default function Home() {
             {/* MY MATCHES */}
             {/* <MyMatches /> */}
             {/* UPCOMING MATCHES */}
-            <UpcomingMatches />
+            <UpcomingMatches matches={matches} />
           </main>
         </div>
         <Footer />

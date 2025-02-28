@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Skeleton from "react-loading-skeleton";
 import { matchs } from "../common/helper";
 
-const UpcomingMatches = ({ state = "Upcoming" }) => {
+const UpcomingMatches = ({ state = "Upcoming", matches }) => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
@@ -86,9 +86,9 @@ const UpcomingMatches = ({ state = "Upcoming" }) => {
           ))} */}
 
         {!loading &&
-          matchs.map((d, index) => (
+          matches.map((d, index) => (
             // here use id from matchess d.id instead of index
-            <Link href={`/${index + 1}/contest`}>
+            <Link href={`/${d.id}/contest`}>
               <div className="rounded-[20px] overflow-hidden border shadow-sm bg-white border-[#E7E7E7]">
                 <div className="h-[33px]  flex justify-center items-center px-3">
                   <div className="flex w-full items-center justify-between">
