@@ -28,10 +28,14 @@ const Page = ({ params }) => {
           <ContestTabs active={2} gameId={gameId} />
 
           {/* Only render PredictionTable if statusGame is valid */}
-          {statusGame ? (
-            <PredictionTable status={statusGame} />
+          {data.id !== 5 ? (
+            statusGame ? (
+              <PredictionTable status={statusGame} />
+            ) : (
+              <p className="text-center text-red-500">Invalid game ID</p>
+            )
           ) : (
-            <p className="text-center text-red-500">Invalid game ID</p>
+            <p> please join contest to create prediction</p>
           )}
         </main>
       </div>

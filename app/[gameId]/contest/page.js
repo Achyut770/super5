@@ -24,8 +24,8 @@ const Page = ({ params }) => {
         <main className="w-full">
           <ContestHeader data={data} />
           <ContestTabs active={1} gameId={gameId} />
-          {isUpComing && <JoinSupercoin />}
-          <WiningRank />
+          {isUpComing && <JoinSupercoin id={gameId} />}
+          {<WiningRank />}
         </main>
       </div>
     </div>

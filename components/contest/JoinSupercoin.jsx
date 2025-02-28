@@ -1,7 +1,8 @@
 import Link from "next/link";
 import React from "react";
 
-const JoinSupercoin = () => {
+const JoinSupercoin = ({ id }) => {
+  console.log("id", id);
   return (
     <div className="max-w-[430px] mt-3 px-[10px] mx-auto w-full">
       <div className="w-full bg-white p-[10px] shadow-md rounded-[16px]">
@@ -22,7 +23,7 @@ const JoinSupercoin = () => {
             href="/prediction"
             className="w-full flex justify-center items-center rounded-full text-center h-[50px] bg-[#28A33C] text-white text-[15px] font-bold"
           >
-            Joined 10 Super coins
+            {id != 5 ? "Joined" : "Join"} 10 Super coins
           </Link>
         </div>
       </div>
