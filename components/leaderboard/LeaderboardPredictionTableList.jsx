@@ -3,7 +3,9 @@ import { TableCoinIcon } from "../common/Icons";
 const LeaderboardPredictionTableList = ({
   data,
   setShowSelectedPrediction,
+  status,
 }) => {
+  const isUpComing = status === "Upcoming";
   return (
     <div
       onClick={() => setShowSelectedPrediction(true)}
@@ -21,10 +23,14 @@ const LeaderboardPredictionTableList = ({
           )}
         </div>
         <div class="w-[80px] flex justify-center items-center gap-1">
-          <span class="text-[#000] text-[15px]">{data.points}</span>
+          <span class="text-[#000] text-[15px]">
+            {isUpComing ? data.points : status}
+          </span>
         </div>
         <div class="w-[80px] flex justify-center items-center gap-1">
-          <span class="text-[#000] text-[15px]">{data.rank}</span>
+          <span class="text-[#000] text-[15px]">
+            {isUpComing ? data.rank : status}
+          </span>
         </div>
       </div>
     </div>

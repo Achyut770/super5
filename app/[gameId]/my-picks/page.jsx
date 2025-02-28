@@ -1,8 +1,13 @@
 import ContestHeader from "@/components/contest/ContestHeader";
 import ContestTabs from "@/components/contest/ContestTabs";
 import PredictionTable from "@/components/my-picks/PredictionTable";
+import { data } from "../contest/page"; // Ensure 'data' is correctly imported
 
-const page = () => {
+const Page = ({ params }) => {
+  const { gameId } = params;
+
+  const statusGame = data[gameId] ? data[gameId] : null;
+
   return (
     <div className="flex h-[100dvh] flex-col">
       <div className="absolute left-0 top-0 flex justify-center w-full">
@@ -14,12 +19,18 @@ const page = () => {
       <div className="flex flex-col relative z-[1] grow w-full max-w-[430px] mx-auto overflow-hidden">
         <main className="w-full">
           <ContestHeader />
-          <ContestTabs active={2} />
-          <PredictionTable />
+          <ContestTabs active={2} gameId={gameId} />
+          
+          {/* Only render PredictionTable if statusGame is valid */}
+          {statusGame ? (
+            <PredictionTable status={statusGame} />
+          ) : (
+            <p className="text-center text-red-500">Invalid game ID</p>
+          )}
         </main>
       </div>
     </div>
   );
 };
 
-export default page;
+export default Page;

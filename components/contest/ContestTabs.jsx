@@ -2,27 +2,27 @@
 import Link from "next/link";
 import React, { useState } from "react";
 
-const ContestTabs = ({ active }) => {
+const ContestTabs = ({ active, gameId }) => {
   const tabList = [
     {
       title: "Contest",
       id: 1,
-      url: "/contest/1",
+      url: `/${gameId}/contest`,
     },
     {
       title: "My Picks",
       id: 2,
-      url: "/my-picks",
+      url: `/${gameId}/my-picks`,
     },
     {
       title: "Leaderboard",
       id: 3,
-      url: "/leaderboard",
+      url: `/${gameId}/leaderboard`,
     },
     {
       title: "Rules",
       id: 4,
-      url: "/rules",
+      url: `/${gameId}/rules`,
     },
   ];
   const [activeTab, setActiveTab] = useState(active);

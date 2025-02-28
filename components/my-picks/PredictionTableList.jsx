@@ -1,6 +1,8 @@
 import { RedirectArrowIcon } from "../common/Icons";
 
-const PredictionTableList = ({ data, setShowQuestion }) => {
+const PredictionTableList = ({ data, setShowQuestion, status }) => {
+  const isUpComing = status === "Upcoming";
+
   return (
     <div className="flex bg-[white] hover:bg-[#FFEAE2] transition-all duration-300 rounded-lg cursor-pointer p-[10px] items-center justify-between">
       <div className="flex items-center gap-2">
@@ -14,12 +16,16 @@ const PredictionTableList = ({ data, setShowQuestion }) => {
           <h4 className="text-[16px] text-black font-bold">{data.name}</h4>
         </div>
       </div>
-      <span
-        onClick={() => setShowQuestion(true)}
-        className="w-[100px] flex justify-end h-full items-center"
-      >
-        <RedirectArrowIcon />
-      </span>
+      {isUpComing ? (
+        <span
+          onClick={() => setShowQuestion(true)}
+          className="w-[100px] flex justify-end h-full items-center"
+        >
+          <RedirectArrowIcon />
+        </span>
+      ) : status ? (
+        status
+      ) : null}
     </div>
   );
 };

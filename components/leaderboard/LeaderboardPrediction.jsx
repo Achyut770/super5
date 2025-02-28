@@ -4,7 +4,7 @@ import { useState } from "react";
 import LeaderboardPredictionTableList from "./LeaderboardPredictionTableList";
 import SelectedPrediction from "./SelectedPrediction";
 
-const LeaderboardPrediction = () => {
+const LeaderboardPrediction = ({ status }) => {
   const [showSelectedPrediction, setShowSelectedPrediction] = useState(false);
 
   const predictionTableData = [
@@ -91,6 +91,8 @@ const LeaderboardPrediction = () => {
               <LeaderboardPredictionTableList
                 setShowSelectedPrediction={setShowSelectedPrediction}
                 data={d}
+                status={status}
+                key={d.id}
               />
             );
           })}

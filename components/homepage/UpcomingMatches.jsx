@@ -87,7 +87,8 @@ const UpcomingMatches = ({ state = "Upcoming" }) => {
 
         {!loading &&
           matchs.map((d, index) => (
-            <Link href="/contest/1">
+            // here use id from matchess d.id instead of index
+            <Link href={`/${index + 1}/contest`}>
               <div className="rounded-[20px] overflow-hidden border shadow-sm bg-white border-[#E7E7E7]">
                 <div className="h-[33px]  flex justify-center items-center px-3">
                   <div className="flex w-full items-center justify-between">

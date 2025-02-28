@@ -1,9 +1,13 @@
 import ContestHeader from "@/components/contest/ContestHeader";
 import ContestTabs from "@/components/contest/ContestTabs";
-import JoinSupercoin from "@/components/contest/JoinSupercoin";
-import WiningRank from "@/components/contest/WiningRank";
+import LeaderboardPrediction from "@/components/leaderboard/LeaderboardPrediction";
+import { data } from "../contest/page";
 
-const page = () => {
+const page = ({ params }) => {
+  const { gameId } = params; // Get dynamic param from URL
+
+  const status = data[gameId];
+
   return (
     <div className="flex h-[100dvh] flex-col">
       <div className="absolute left-0 top-0 flex justify-center w-full">
@@ -12,12 +16,11 @@ const page = () => {
         </div>
       </div>
 
-      <div className="flex relative z-[1] grow mb-2 w-full max-w-[430px] mx-auto overflow-hidden">
+      <div className="flex flex-col relative z-[1] grow w-full max-w-[430px] mx-auto overflow-hidden">
         <main className="w-full">
           <ContestHeader />
-          <ContestTabs active={1} />
-          <JoinSupercoin />
-          <WiningRank />
+          <ContestTabs active={3} gameId={gameId} />
+          <LeaderboardPrediction status={status} />
         </main>
       </div>
     </div>

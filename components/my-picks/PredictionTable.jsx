@@ -5,7 +5,7 @@ import { DownArrowIcon } from "../common/Icons";
 import PredictionTableList from "./PredictionTableList";
 import QuestionWrapper from "./QuestionWrapper";
 
-const PredictionTable = () => {
+const PredictionTable = ({status}) => {
   const [showTable, setShowTable] = useState(true);
   const [showQuestion, setShowQuestion] = useState(false);
   const dummyTableData = [
@@ -31,6 +31,7 @@ const PredictionTable = () => {
       name: "Virat kohli",
     },
   ];
+
   return (
     <>
       <div
@@ -65,6 +66,7 @@ const PredictionTable = () => {
             {dummyTableData.map((d) => {
               return (
                 <PredictionTableList
+                status={status}
                   setShowQuestion={setShowQuestion}
                   data={d}
                 />
@@ -77,7 +79,7 @@ const PredictionTable = () => {
         style={{ top: showQuestion ? "20dvh" : "100dvh" }}
         className="fixed z-[100] top-[20dvh] flex-col duration-200 transition-all h-[80dvh] w-full left-0 flex justify-center"
       >
-        <QuestionWrapper setShowQuestion={setShowQuestion} />
+        <QuestionWrapper setShowQuestion={setShowQuestion} /> 
       </div>
     </>
   );
