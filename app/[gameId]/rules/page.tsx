@@ -1,5 +1,5 @@
-import ContestHeader from "@/components/contest/ContestHeader";
-import ContestTabs from "@/components/contest/ContestTabs";
+import ContestHeader from "../../../components/contest/ContestHeader";
+import ContestTabs from "../../../components/contest/ContestTabs";
 import { findMatches } from "../../../components/common/helper";
 
 const page = ({ params }) => {
