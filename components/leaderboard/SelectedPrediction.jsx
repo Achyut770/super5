@@ -29,7 +29,7 @@ const SelectedPrediction = ({ setShowSelectedPrediction, status }) => {
       point: -172,
     },
   ];
-  const isLive = status === "Live";
+  const isCompleted = status === "Completed";
   return (
     <div className="max-w-[430px] relative max-h-full overflow-hidden bg-white mx-auto w-full px-[10px]">
       <button
@@ -58,9 +58,9 @@ const SelectedPrediction = ({ setShowSelectedPrediction, status }) => {
       </button>
       <div className="flex px-4 py-5 flex-col gap-1">
         <h2 className="text-black leading-[1] text-[18px] text-left">
-          Samir Alley <b>- 150 points</b>
+          Samir Alley{isCompleted && <b>- 150 points</b>}
         </h2>
-        {!isLive && (
+        {isCompleted && (
           <span className="leading-[1] font-bold text-primary">
             Won iPhone 15
           </span>
@@ -71,7 +71,7 @@ const SelectedPrediction = ({ setShowSelectedPrediction, status }) => {
         {data.map((d) => (
           <div className="flex px-3 cursor-pointer items-center rounded-lg bg-[#F6F6F6] py-2 justify-between w-full">
             <div className="flex gap-3 items-center">
-              {!isLive && (
+              {isCompleted && (
                 <span
                   className={`${
                     d.point > 0 ? "bg-[#0EA900]" : "bg-[#FF2E00]"
@@ -86,7 +86,7 @@ const SelectedPrediction = ({ setShowSelectedPrediction, status }) => {
                 </h1>
                 <div className="flex gap-1 items-center">
                   <p className="leading-[1] font-bold text-[16px]">{d.name} </p>
-                  {!isLive && (
+                  {isCompleted && (
                     <p
                       className={`leading-[1] font-bold text-[16px] ${
                         d.point > 0 ? "text-[#0EA900]" : "text-[#FF2E00]"
@@ -98,7 +98,11 @@ const SelectedPrediction = ({ setShowSelectedPrediction, status }) => {
                 </div>
               </div>
             </div>
-            <div className="">{d.point > 0 ? <TickMark /> : <CrossMark />}</div>
+            {isCompleted && (
+              <div className="">
+                {d.point > 0 ? <TickMark /> : <CrossMark />}
+              </div>
+            )}{" "}
           </div>
         ))}
       </div>

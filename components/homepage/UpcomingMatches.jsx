@@ -123,15 +123,19 @@ const UpcomingMatches = ({ state = "Upcoming", matches }) => {
                       <div className="flex gap-1 items-center">
                         <img className="w-[30px]" src="/img/flags/RR.png" />
                         <span className="text-[15px] font-semibold text-black">
-                          Rajasthan Royals{" "}
-                          <span className="font-normal opacity-70">(RR)</span>
+                          {d.title_Q1}{" "}
+                          <span className="font-normal opacity-70">
+                            {d.team_Q1}
+                          </span>
                         </span>
                       </div>
                       <div className="flex gap-1 items-center">
                         <img className="w-[30px]" src="/img/flags/punjab.png" />
                         <span className="text-[15px] font-semibold text-black">
-                          Punjab Kings{" "}
-                          <span className="font-normal opacity-70">(PBKS)</span>
+                          {d.title_Q2}{" "}
+                          <span className="font-normal opacity-70">
+                            {d.team_Q2}
+                          </span>
                         </span>
                       </div>
                     </div>

@@ -22,7 +22,7 @@ const JoinSupercoin = () => {
             href="/prediction"
             className="w-full flex justify-center items-center rounded-full text-center h-[50px] bg-[#28A33C] text-white text-[15px] font-bold"
           >
-            Join 10 Super coins
+            Joined 10 Super coins
           </Link>
         </div>
       </div>

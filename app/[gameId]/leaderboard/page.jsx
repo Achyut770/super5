@@ -6,11 +6,10 @@ import { findMatches, statusData } from "../../../components/common/helper";
 const page = ({ params }) => {
   const { gameId = 1 } = params;
 
-  if (!gameId) return;
-
   const data = findMatches(gameId);
 
   const status = data.status;
+  if (!gameId || !data) return;
 
   return (
     <div className="flex h-[100dvh] flex-col">
@@ -22,7 +21,7 @@ const page = ({ params }) => {
 
       <div className="flex flex-col relative z-[1] grow w-full max-w-[430px] mx-auto overflow-hidden">
         <main className="w-full">
-          <ContestHeader />
+          <ContestHeader data={data} />
           <ContestTabs active={3} gameId={gameId} />
           <LeaderboardPrediction status={status} />
         </main>

@@ -57,8 +57,8 @@ export const footerLinks = [
 export const matchs = [
   {
     id: 1,
-    team_Q1: "RR",
-    title_Q1: "Rajasthan Royals",
+    team_Q1: "RCB",
+    title_Q1: "RCB",
     logo_Q1: "/img/flags/RR.png",
 
     time: {
@@ -73,8 +73,8 @@ export const matchs = [
   },
   {
     id: 2,
-    team_Q1: "RR",
-    title_Q1: "Rajasthan Royals",
+    team_Q1: "MI",
+    title_Q1: "Mumbai Indians",
     logo_Q1: "/img/flags/RR.png",
 
     time: {
@@ -82,8 +82,8 @@ export const matchs = [
       time: "08:00 PM",
     },
 
-    team_Q2: "PBKS",
-    title_Q2: "Punjab Kings",
+    team_Q2: "CSK",
+    title_Q2: "Chennai Super Kings",
     logo_Q2: "/img/flags/punjab.png",
     status: "Completed",
   },
@@ -98,8 +98,8 @@ export const matchs = [
       time: "08:00 PM",
     },
 
-    team_Q2: "PBKS",
-    title_Q2: "Punjab Kings",
+    team_Q2: "KKR",
+    title_Q2: "Kolkata Knight Riders",
     logo_Q2: "/img/flags/punjab.png",
     status: "Upcoming",
   },

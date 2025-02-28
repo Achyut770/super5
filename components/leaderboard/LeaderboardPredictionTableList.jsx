@@ -6,6 +6,7 @@ const LeaderboardPredictionTableList = ({
   status,
 }) => {
   const isUpComing = status === "Upcoming";
+  const isCompleted = status === "Completed";
   return (
     <div
       onClick={() => setShowSelectedPrediction(true)}
@@ -16,7 +17,7 @@ const LeaderboardPredictionTableList = ({
           <span class="text-[#000] flex font-medium text-[16px]">
             {data.title}
           </span>
-          {data && data.offer && (
+          {isCompleted && data && data.offer && (
             <span className="text-primary flex items-center gap-1 font-bold text-[13px]">
               {data.offer} {data && data.icon && <TableCoinIcon />}
             </span>
@@ -24,12 +25,12 @@ const LeaderboardPredictionTableList = ({
         </div>
         <div class="w-[80px] flex justify-center items-center gap-1">
           <span class="text-[#000] text-[15px]">
-            {isUpComing ? data.points : null}
+            {isCompleted ? data.points : null}
           </span>
         </div>
         <div class="w-[80px] flex justify-center items-center gap-1">
           <span class="text-[#000] text-[15px]">
-            {isUpComing ? data.rank : null}
+            {isCompleted ? data.rank : null}
           </span>
         </div>
       </div>

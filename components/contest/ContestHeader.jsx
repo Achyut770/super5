@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-const ContestHeader = () => {
+const ContestHeader = ({ data }) => {
   return (
     <div className="max-w-[430px] relative h-[70px] flex flex-col justify-center gap-[4px] mx-auto w-full">
       <div className="absolute top-[22px] left-[10px]">
@@ -22,11 +22,20 @@ const ContestHeader = () => {
         </Link>
       </div>
       <h2 className="text-[20px] leading-[1] text-center text-white font-bold">
-        RR vs KKR
+        {data.team_Q1} vs {data.team_Q2}
       </h2>
-      <p className="text-white leading-[1] text-center text-[14px]">
-        Starts in <span className="font-semibold">1D : 18H:28M:15S</span>
-      </p>
+      {data.status === "Upcoming" ? (
+        <p className="text-white leading-[1] text-center text-[14px]">
+          Starts in{" "}
+          <span className="font-semibold">
+            {data?.time?.time}
+            &nbsp;
+            {data?.time?.date}
+          </span>
+        </p>
+      ) : (
+        <p className="text-white  text-center text-[14px]"> {data.status}</p>
+      )}
     </div>
   );
 };

@@ -9,9 +9,8 @@ const Page = ({ params }) => {
 
   const data = findMatches(gameId);
 
-  if (!gameId || !data) return;
-
   const isUpComing = data.status === "Upcoming";
+  if (!gameId || !data) return;
 
   return (
     <div className="flex h-[100dvh] flex-col">
@@ -23,7 +22,7 @@ const Page = ({ params }) => {
 
       <div className="flex relative z-[1] grow mb-2 w-full max-w-[430px] mx-auto overflow-hidden">
         <main className="w-full">
-          <ContestHeader />
+          <ContestHeader data={data} />
           <ContestTabs active={1} gameId={gameId} />
           {isUpComing && <JoinSupercoin />}
           <WiningRank />
