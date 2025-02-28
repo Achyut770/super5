@@ -13,6 +13,14 @@ import {
   TransactionIcon,
 } from "./Icons";
 
+export const statusData = {
+  1: "Live",
+  2: "Upcoming",
+  3: "Completed",
+  4: "Live",
+  5: "Upcoming",
+};
+
 export const footerLinks = [
   {
     title: "Home",

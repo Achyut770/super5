@@ -2,14 +2,9 @@ import ContestHeader from "@/components/contest/ContestHeader";
 import ContestTabs from "@/components/contest/ContestTabs";
 import JoinSupercoin from "@/components/contest/JoinSupercoin";
 import WiningRank from "@/components/contest/WiningRank";
+import { statusData } from "../../../components/common/helper";
 
-export const data = {
-  1:"Live",
-  2:"Upcoming" , 
-  3:"Completed",
-  4:"Live",
-  5:"Upcoming"
-}
+
 
 const Page = ({ params }) => {
   const { gameId } = params; // Get dynamic param from URL
@@ -17,7 +12,7 @@ const Page = ({ params }) => {
   
 
   // fetch data and find if its status
-  const isUpComing = data[gameId] ==="Upcoming"
+  const isUpComing = statusData[gameId] ==="Upcoming"
 
   return (
     <div className="flex h-[100dvh] flex-col">

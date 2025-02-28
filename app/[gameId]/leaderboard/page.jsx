@@ -1,12 +1,12 @@
 import ContestHeader from "@/components/contest/ContestHeader";
 import ContestTabs from "@/components/contest/ContestTabs";
 import LeaderboardPrediction from "@/components/leaderboard/LeaderboardPrediction";
-import { data } from "../contest/page";
+import { statusData } from "../../../components/common/helper";
 
 const page = ({ params }) => {
   const { gameId } = params; // Get dynamic param from URL
 
-  const status = data[gameId];
+  const status = statusData[gameId];
 
   return (
     <div className="flex h-[100dvh] flex-col">

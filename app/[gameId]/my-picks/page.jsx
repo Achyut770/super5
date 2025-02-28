@@ -1,12 +1,12 @@
 import ContestHeader from "@/components/contest/ContestHeader";
 import ContestTabs from "@/components/contest/ContestTabs";
 import PredictionTable from "@/components/my-picks/PredictionTable";
-import { data } from "../contest/page"; // Ensure 'data' is correctly imported
+import { statusData } from "../../../components/common/helper";
 
 const Page = ({ params }) => {
   const { gameId } = params;
 
-  const statusGame = data[gameId] ? data[gameId] : null;
+  const statusGame = statusData[gameId] ? statusData[gameId] : null;
 
   return (
     <div className="flex h-[100dvh] flex-col">
@@ -20,7 +20,7 @@ const Page = ({ params }) => {
         <main className="w-full">
           <ContestHeader />
           <ContestTabs active={2} gameId={gameId} />
-          
+
           {/* Only render PredictionTable if statusGame is valid */}
           {statusGame ? (
             <PredictionTable status={statusGame} />
