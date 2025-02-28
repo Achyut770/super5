@@ -25,9 +25,7 @@ const Page = ({ params }) => {
       <div className="flex flex-col relative z-[1] grow w-full max-w-[430px] mx-auto overflow-hidden">
         <main className="w-full">
           <ContestHeader data={data} />
-          <ContestTabs active={2} gameId={gameId} />
-
-          {/* Only render PredictionTable if statusGame is valid */}
+          <ContestTabs active={2} gameId={gameId} />x{" "}
           {data.id !== 5 ? (
             statusGame ? (
               <PredictionTable status={statusGame} />
